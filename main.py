@@ -6,6 +6,8 @@ from slowapi.errors import RateLimitExceeded
 import httpx
 import logging
 from datetime import datetime, timezone
+import os
+import uvicorn
 
 
 logging.basicConfig(
@@ -82,3 +84,6 @@ async def get_profile(request: Request):
             "timestamp": current_time,
         }
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
