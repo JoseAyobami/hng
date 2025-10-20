@@ -1,6 +1,7 @@
 fastapi
-uvicorn
+uvicorn[standard]
 httpx
 slowapi
-fastapi-cors
-python-dotenv
+pytest
+black
+isort
